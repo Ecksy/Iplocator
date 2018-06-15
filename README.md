@@ -3,7 +3,7 @@ Welcome to the Iplocator README file!
 IPLocator is a simple tool coded in perl to help you identify a site or ip geographical location 
 Provides country, region, city, latitude, longitude, ZIP code, time zone, ISP, domain name, IDD country code, area code from ip-api.com's IP address lookup database without invading the Internet user's privacy. 
 
-Usage: ./iplocator.pl [host] [ip] [domain]
+Usage: ./iplocator.pl [host] [ip] [domain]    
        perl iplocator.pl [host] [ip] [domain]
        
   Ex:  ./iplocator.pl  www.google.com    
