@@ -22,7 +22,7 @@ Modded by: Ecksy
 ------------------------------------
 };
  
-print color 'reset';
+#print color 'reset';
 @iphost=$ARGV[0] || die "Usage: ./iplocator.pl [host] [ip] [domain] \n       perl iplocator.pl [host] [ip] [domain] \n\nEx:  ./iplocator.pl  www.google.com \n     ./iplocator.pl  216.58.210.206\n \nUsage Limit: The ip-api.com system will automatically ban any IP addresses doing over 150 requests per minute. \n\nIf your IP was banned, visit http://ip-api.com/docs/unban \n\n";
 my @ip = inet_ntoa(scalar gethostbyname("@iphost")or die "IP or Host invalid!\n");
 my @hn = scalar gethostbyaddr(inet_aton(@ip),AF_INET);
