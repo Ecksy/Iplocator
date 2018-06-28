@@ -67,5 +67,6 @@ print "  [+] Timezone		:  ", $info->{'timezone'}, "\n";
 print "  [+] ISP		:  ", $info->{'isp'}, "\n";
 print "  [+] Organization	:  ", $info->{'org'}, "\n";
 print "  [+] AS Number/Name	:  ", $info->{'as'}, "\n";
+print "  [+] https://maps.google.com/maps/place/$info->{'lat'}%20$info->{'lon'}", "\n";
 print "\n";
 # EOF
