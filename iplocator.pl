@@ -2,9 +2,9 @@
 # Ip Geolocation 
 #
 # API documentation - http://ip-api.com/docs/
-# you can see you external ip using this Bash script :
+# you can see your external ip using this Bash script :
 # read COUNTRY IP <<< $(wget -qO- http://ip-api.com/line/?fields=countryCode,query); echo $IP $COUNTRY
-# Now let's start :
+# Now let's start:
 
 use Socket;
 use Term::ANSIColor;
@@ -19,7 +19,7 @@ Ip Geolocation Tool
 By: Alexcerus-HR
 Modded by: Ecksy
 
-------------------------------------
+  ----------------------------------------
 };
  
 #print color 'reset';
@@ -56,7 +56,7 @@ my $info = decode_json($json);
 print "  [!] IP		:  ", $info->{'query'}, "\n";
 print "  [!] Query Status	:  ", $info->{'status'}, "\n";
 print "  [!] Error Message	:  ", $info->{'message'}, "\n";
-print "------------------------------------\n";
+print "  ----------------------------------------\n";
 print "  [+] Country/Code	:  ", $info->{'country'}," - ", $info->{'countryCode'}, "\n";
 print "  [+] Region/Code	:  ", $info->{'regionName'}, " - " , $info->{'region'}, "\n";
 print "  [+] City		:  ", $info->{'city'}, "\n";
