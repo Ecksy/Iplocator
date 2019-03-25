@@ -28,7 +28,7 @@ my @ip = inet_ntoa(scalar gethostbyname("@iphost")or die "IP or Host invalid!\n"
 my @hn = scalar gethostbyaddr(inet_aton(@ip),AF_INET);
  
 my $GET=WWW::Mechanize->new();
-    $GET->get("http://ip-api.com/json/@ip"); # JSON API OF IP-API.COM
+    $GET->get("http://ip-api.com/json/@ip?fields=589823"); # JSON API OF IP-API.COM
     my $json = $GET->content();
  
  
@@ -67,6 +67,8 @@ print "  [+] Timezone		:  ", $info->{'timezone'}, "\n";
 print "  [+] ISP		:  ", $info->{'isp'}, "\n";
 print "  [+] Organization	:  ", $info->{'org'}, "\n";
 print "  [+] AS Number/Name	:  ", $info->{'as'}, "\n";
+print "  [+] Reverse DNS	:  ", $info->{'reverse'}, "\n";
+print "  [+] District		:  ", $info->{'district'}, "\n";
 print "  [+] https://maps.google.com/maps/place/$info->{'lat'}%20$info->{'lon'}", "\n";
 print "\n";
 # EOF
