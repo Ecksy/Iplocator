@@ -16,10 +16,8 @@ use JSON;
  
 print q{
 Ip Geolocation Tool  
-By: Alexcerus-HR
-Modded by: Ecksy
 
-  ----------------------------------------
+--------------------------------------------------
 };
  
 #print color 'reset';
@@ -28,7 +26,7 @@ my @ip = inet_ntoa(scalar gethostbyname("@iphost")or die "IP or Host invalid!\n"
 my @hn = scalar gethostbyaddr(inet_aton(@ip),AF_INET);
  
 my $GET=WWW::Mechanize->new();
-    $GET->get("http://ip-api.com/json/@ip?fields=589823"); # JSON API OF IP-API.COM
+    $GET->get("http://ip-api.com/json/@ip?fields=33292287"); # JSON API OF IP-API.COM
     my $json = $GET->content();
  
  
@@ -53,22 +51,27 @@ my $info = decode_json($json);
 # }
 # INFOS OF JSON API ...
  
-print "  [!] IP		:  ", $info->{'query'}, "\n";
-print "  [!] Query Status	:  ", $info->{'status'}, "\n";
-print "  [!] Error Message	:  ", $info->{'message'}, "\n";
-print "  ----------------------------------------\n";
-print "  [+] Country/Code	:  ", $info->{'country'}," - ", $info->{'countryCode'}, "\n";
-print "  [+] Region/Code	:  ", $info->{'regionName'}, " - " , $info->{'region'}, "\n";
-print "  [+] City		:  ", $info->{'city'}, "\n";
-print "  [+] Zip		:  ", $info->{'zip'}, "\n";
-print "  [+] Geo		:  ", "Lat: " , $info->{'lat'}, " - Long: ", $info->{'lon'}, "\n";
-print "  [+] Paste to Maps	:  ", $info->{'lat'},  ", ", $info->{'lon'}, "\n";
-print "  [+] Timezone		:  ", $info->{'timezone'}, "\n";
-print "  [+] ISP		:  ", $info->{'isp'}, "\n";
-print "  [+] Organization	:  ", $info->{'org'}, "\n";
-print "  [+] AS Number/Name	:  ", $info->{'as'}, "\n";
-print "  [+] Reverse DNS	:  ", $info->{'reverse'}, "\n";
-print "  [+] District		:  ", $info->{'district'}, "\n";
+print "  [!] IP			:  ", $info->{'query'}, "\n";
+print "  [!] Query Status		:  ", $info->{'status'}, "\n";
+print "  [!] Error Message		:  ", $info->{'message'}, "\n";
+print "  --------------------------------------------------\n";
+print "  [+] Country/Code		:  ", $info->{'country'}," - ", $info->{'countryCode'}, "\n";
+print "  [+] Region/Code		:  ", $info->{'regionName'}, " - " , $info->{'region'}, "\n";
+print "  [+] City			:  ", $info->{'city'}, "\n";
+print "  [+] Zip			:  ", $info->{'zip'}, "\n";
+print "  [+] District			:  ", $info->{'district'}, "\n";
+print "  [+] Geo			:  ", "Lat: " , $info->{'lat'}, " - Long: ", $info->{'lon'}, "\n";
+print "  [+] Paste to Maps		:  ", $info->{'lat'},  ", ", $info->{'lon'}, "\n";
+print "  [+] Timezone			:  ", $info->{'timezone'}, "\n";
+print "  [+] ISP			:  ", $info->{'isp'}, "\n";
+print "  [+] Organization		:  ", $info->{'org'}, "\n";
+print "  [+] AS Number			:  ", $info->{'as'}, "\n";
+print "  [+] AS Name			:  ", $info->{'asname'}, "\n";
+print "  [+] Reverse DNS		:  ", $info->{'reverse'}, "\n";
+print "  [+] Mobile Connection		:  ", $info->{'mobile'}, "\n";
+print "  [+] Proxy/VPN/Tor Exit	:  ", $info->{'proxy'}, "\n";
+print "  [+] Hosting/Colo/DataCenter	:  ", $info->{'hosting'}, "\n";
+print "  [+] Country Currency		:  ", $info->{'currency'}, "\n";
 print "  [+] https://maps.google.com/maps/place/$info->{'lat'}%20$info->{'lon'}", "\n";
 print "\n";
 # EOF
